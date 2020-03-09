@@ -16,9 +16,16 @@ func main() {
 		random_data[i] = randUtil.GenerateRandomInt(10000) //Give them some values.
 	}
 	sorted_random_data := algo.SelectionSort(random_data, false)
-	fmt.Printf("test_data = %v\n", test_data)                   //Static array
-	fmt.Printf("sorted_data = %v\n", sorted_array)              //Static array sorted.
-	fmt.Printf("test_data random = %v\n", random_data)          //Dynamic array.
+	fmt.Printf("test_data = %v\n", test_data)          //Static array
+	fmt.Printf("sorted_data = %v\n", sorted_array)     //Static array sorted.
+	fmt.Printf("test_data random = %v\n", random_data) //Dynamic array.
+	//TODO time the algos
+
+	fmt.Println("Using selectionSort")
+	fmt.Println("==================")
 	fmt.Printf("sorted random data = %v\n", sorted_random_data) //Dynamic array sorted.
 
+	fmt.Println("Using BubbleSort")
+	fmt.Println("==================")
+	fmt.Printf("sorted random data =%v\n", algo.BubbleSort(random_data, false))
 }
