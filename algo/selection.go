@@ -1,9 +1,7 @@
-package main
+package algo
 
 import (
 	"fmt"
-	"math/rand" /*For random numbers and dynamic test arrays*/
-	"time"      /*For seeding random generator*/
 )
 
 func SelectionSort(input []int, printComparision bool) []int {
@@ -31,23 +29,5 @@ func SelectionSort(input []int, printComparision bool) []int {
 		}
 	}
 	return result
-
-}
-func main() {
-	test_data := []int{1, 9, 0, -2, 4, 6, 8, 100, 30, 3}
-	sorted_array := SelectionSort(test_data, false)
-	//Our random test data.
-	var random_data []int
-	random_source := rand.NewSource(time.Now().UnixNano())
-	random_generator := rand.New(random_source)
-	random_data = make([]int, random_generator.Intn(1000)) //Create a dynamic array at most 1000 entries.
-	for i := 0; i < len(random_data); i += 1 {
-		random_data[i] = random_generator.Intn(10000) //Give them some values.
-	}
-	sorted_random_data := SelectionSort(random_data, false)
-	fmt.Printf("test_data = %v\n", test_data)                   //Static array
-	fmt.Printf("sorted_data = %v\n", sorted_array)              //Static array sorted.
-	fmt.Printf("test_data random = %v\n", random_data)          //Dynamic array.
-	fmt.Printf("sorted random data = %v\n", sorted_random_data) //Dynamic array sorted.
 
 }
