@@ -28,4 +28,9 @@ func main() {
 	fmt.Println("Using BubbleSort")
 	fmt.Println("==================")
 	fmt.Printf("sorted random data =%v\n", algo.BubbleSort(random_data, false))
+
+	fmt.Println("Using InsertionSort")
+	fmt.Println("==================")
+	fmt.Printf("sorted random data =%v\n", algo.InsertionSort(random_data, false))
+
 }
