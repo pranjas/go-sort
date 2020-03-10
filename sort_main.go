@@ -11,7 +11,7 @@ func main() {
 	sorted_array := algo.SelectionSort(test_data, false)
 	//Our random test data.
 	var random_data []int
-	random_data = make([]int, randUtil.GenerateRandomInt(1000)) //Create a dynamic array at most 1000 entries.
+	random_data = make([]int, randUtil.GenerateRandomInt(10000)) //Create a dynamic array at most 1000 entries.
 	for i := 0; i < len(random_data); i += 1 {
 		random_data[i] = randUtil.GenerateRandomInt(10000) //Give them some values.
 	}
@@ -32,5 +32,9 @@ func main() {
 	fmt.Println("Using InsertionSort")
 	fmt.Println("==================")
 	fmt.Printf("sorted random data =%v\n", algo.InsertionSort(random_data, false))
+
+	fmt.Println("Using MergeSort")
+	fmt.Println("==================")
+	fmt.Printf("sorted random data =%v\n", algo.MergeSort(random_data, false))
 
 }
