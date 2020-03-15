@@ -9,8 +9,9 @@ import (
 //Due to the two loops and no break conditions, the
 //complexity is O(N^2)
 func BubbleSort(input []int, verbose bool) []int {
-	result := make([]int, len(input))
-	copy(result, input)
+	//result := make([]int, len(input))
+	//copy(result, input)
+	result := input
 	//The largest value will bubble out to the end.
 	//Instead of selection we just compare and swap
 	//a pair of values together.

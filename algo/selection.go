@@ -5,8 +5,9 @@ import (
 )
 
 func SelectionSort(input []int, printComparision bool) []int {
-	var result []int = make([]int, len(input)) //Need to create an array first.
-	copy(result, input)                        //Make a copy. Can work with input as well.
+	//var result []int = make([]int, len(input)) //Need to create an array first.
+	//copy(result, input)                        //Make a copy. Can work with input as well.
+	result := input
 	for select_at, _ := range result {
 		//For each loop run, find the smallest and put it in
 		//the select_at position. We do this by swapping it with

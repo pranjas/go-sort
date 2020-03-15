@@ -6,9 +6,9 @@ import (
 
 func InsertionSort(input []int, verbose bool) []int {
 	//Don't modify the original input.
-	result := make([]int, len(input))
-	copy(result, input)
-
+	//result := make([]int, len(input))
+	//copy(result, input)
+	result := input
 	//A single element is always sorted.
 	//Start looking from the next element, if any.
 	for i := 1; i < len(result); i += 1 {

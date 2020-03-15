@@ -18,8 +18,9 @@ func isSplitSorted(sp *split) bool {
 
 func MergeSort(input []int, verbose bool) []int {
 	//Copy the original input.
-	result := make([]int, len(input))
-	copy(result, input)
+	//result := make([]int, len(input))
+	//copy(result, input)
+	result := input
 
 	var splitList []*split
 
