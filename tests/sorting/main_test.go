@@ -1,6 +1,7 @@
-package main
+package sorting
 
 import (
+	"log"
 	"pks_sort/algo"
 	"pks_sort/randUtil"
 	"testing"
@@ -9,7 +10,7 @@ import (
 //Our random test data.
 var random_data [][]int
 
-const maxNumber = 100000
+const maxNumber = 1000
 
 type sortFunc func([]int, bool) []int
 
@@ -34,7 +35,15 @@ func whichAlgo(algo int) string {
 }
 
 func benchmark_algo(b *testing.B, algo int) {
-	setupInput(b.N)
+	maxValue := b.N
+	if maxValue > maxNumber {
+		b.Logf("Changing benchmark value from %d to %d\n",
+			maxValue, maxNumber)
+		maxValue = maxNumber
+	}
+	setupInput(maxValue)
+	log.Printf("Testing algorithm %s with size %d", whichAlgo(algo),
+		maxValue)
 	b.ResetTimer()
 	for i := 0; i < b.N; i += 1 {
 		_ = functions[algo](random_data[i], false)

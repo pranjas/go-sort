@@ -16,3 +16,7 @@ func init() {
 func GenerateRandomInt(maxValue int) int {
 	return randomGenerator.Intn(maxValue)
 }
+
+func GenerateRandomIntIncludingNegatives(maxValue int) int {
+	return -maxValue + randomGenerator.Intn(2*maxValue+1)
+}
